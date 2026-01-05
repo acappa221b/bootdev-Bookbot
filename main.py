@@ -5,10 +5,10 @@ import sys
 def main():
 
     # books to read
-    if len(sys.argv) > 1:
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
         book_name = sys.argv[1]
-    else:
-        book_name = "books/frankenstein.txt"
     book = get_book_text(book_name)
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_name}...")
