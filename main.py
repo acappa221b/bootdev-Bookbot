@@ -1,20 +1,19 @@
 #libs
 from stats import *
+import sys
 
 def main():
 
     # books to read
-    book_name = "books/frankenstein.txt"
+    sys.argv = ["Usage: python3 main.py <path_to_book>", sys.exit(1)]
+    book_name = sys.argv[1]
     book = get_book_text(book_name)
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_name}...")
+    print("----------- Word Count ----------")
     num_words(book)
-    print(num_each_letter(book))
-
-
-
-
-def get_book_text(book_name):
-    with open(book_name) as f:
-        book_content = f.read()
-    return book_content
+    print("--------- Character Count -------")
+    print_letters(sort_letters(num_each_letter(book)))
+    print("============ THE END ============")
 
 main()
