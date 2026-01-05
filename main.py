@@ -1,3 +1,6 @@
+#libs
+from stats import num_words
+
 def main():
 
     # books to read
@@ -12,11 +15,5 @@ def get_book_text(book_name):
     with open(book_name) as f:
         book_content = f.read()
     return book_content
-
-def num_words(book):
-    words = book.split()
-    return print (f"Found {len(words)} total words")
-
-
 
 main()
