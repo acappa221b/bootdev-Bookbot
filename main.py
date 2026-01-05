@@ -1,12 +1,13 @@
 #libs
-from stats import num_words
+from stats import *
 
 def main():
 
     # books to read
     book_name = "books/frankenstein.txt"
-    get_book_text(book_name)
-    num_words(get_book_text(book_name))
+    book = get_book_text(book_name)
+    num_words(book)
+    print(num_each_letter(book))
 
 
 
